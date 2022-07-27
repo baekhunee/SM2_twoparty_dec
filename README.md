@@ -28,7 +28,7 @@ sm3.SM3(m)
 ```
 
 ## def epoint_add(x1,y1,x2,y2)
-椭圆曲线上的加法,返回值(x,y)=(x1+x2,y1+y2)
+椭圆曲线上的加法,返回值(x,y)=(x1,y1)+(x2,y2)
 
 ## def epoint_mult(x,y,k)
 椭圆曲线上的点乘，返回值为k*(x,y)
