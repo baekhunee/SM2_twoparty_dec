@@ -65,6 +65,7 @@ sm3.SM3(m)
     y1, addr = s.recvfrom(1024)
     y1 = int(y1.decode(), 16)
     T2 = (x1, y1)
+    
     # 计算T2 - C1
     x2, y2 = epoint_add(T2[0], T2[1], C1[0], -C1[1])
     x2, y2 = '{:0256b}'.format(x2), '{:0256b}'.format(y2)
@@ -73,6 +74,7 @@ sm3.SM3(m)
     # M2 = C2 ^ t
     M2 = C2 ^ int(t,2)
     m = hex(int(x2,2)).upper()[2:] + hex(M2).upper()[2:] + hex(int(y2,2)).upper()[2:]
+    
     # u = Hash(x2||M2||y2)这里Hash函数选择SM3
     u = sm3.SM3(m)
     if (u == C3):
@@ -94,7 +96,6 @@ T1 = (x, y)
 # 计算T2 = d2^(-1) * T1
 T2 = epoint_mult(x, y, invert(d2, p))
 x, y = hex(T2[0]), hex(T2[1])
-
 s.sendto(x.encode('utf-8'), addr)
 s.sendto(y.encode('utf-8'), addr)
 ```
