@@ -38,7 +38,7 @@ sm3.SM3(m)
 
 ## 核心代码展示
 双方具体的解密与收发过程均已在代码中添加注释，不再赘述。
-### twoparty_dec_client2
+### twoparty_dec_client1
 ```
 # 生成子私钥 d1
 d1 = 0x6FCBA2EF9AE0AB902BC3BDE3FF915D44BA4CC78F88E2F8E7F8996D3B8CCEEDEE
@@ -82,7 +82,7 @@ if (u == C3):
 print("result:",hex(M2)[2:])
 ```
 
-### twoparty_dec_client1
+### twoparty_dec_client2
 ```
 # 生成子私钥 d2
 d2 = 0x5E35D7D3F3C54DBAC72E61819E730B019A84208CA3A35E4C2E353DFCCB2A3B53
