@@ -8,7 +8,7 @@ from gmpy2 import invert
 from random import randint
 from os.path import commonprefix
 
-#椭圆曲线上的加法(x,y)=(x1+x2,y1+y2)
+#椭圆曲线上的加法(x,y)=(x1,y1)+(x2,y2)
 def epoint_add(x1,y1,x2,y2):
     if x1 == x2 and y1 == p-y2:
         return False
@@ -88,6 +88,7 @@ else:
     y1, addr = s.recvfrom(1024)
     y1 = int(y1.decode(), 16)
     T2 = (x1, y1)
+    
     # 计算T2 - C1
     x2, y2 = epoint_add(T2[0], T2[1], C1[0], -C1[1])
     x2, y2 = '{:0256b}'.format(x2), '{:0256b}'.format(y2)
